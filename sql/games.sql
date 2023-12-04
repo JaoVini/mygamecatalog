@@ -195,10 +195,6 @@ ALTER TABLE `tbuser`
 --
 
 --
--- Restrições para tabelas `plataformas`
---
-ALTER TABLE `plataformas`
-  ADD CONSTRAINT `Plataformas_fk0` FOREIGN KEY (`IdPlataforma`) REFERENCES `tbjogo` (`IdJogo`);
 
 --
 -- Restrições para tabelas `tbavaliacao`
