@@ -13,6 +13,10 @@ router.get('/listagem', function(req, res) {
   });
 });
 
+router.get('/add', function(req, res,) {
+  res.render('categorias-add', {resultado: {}})
+
+ });
 
 router.get('/listar', function(req, res,) {
   db.query('SELECT * FROM categoria', [], function(erro, listagem){
@@ -22,6 +26,21 @@ router.get('/listar', function(req, res,) {
    res.render('categoria-listas', {resultado: listagem});
    });
  });
+
+ router.post('/add', function(req, res) {
+  let categoria = req.body.categoria;
+
+  
+  let cmd = 'INSERT INTO categoria (Categoria) VALUES (?);';
+  db.query(cmd, [categoria], function(erro, listagem) {
+    if (erro) {
+      res.send(erro);
+    } else {
+      res.redirect('/categorias/listar');  // This should be the only response
+    }
+  });
+});
+
 
 
  module.exports = router
