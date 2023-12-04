@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adicionar Jogos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        function getCategoria(){
+          $.ajax({
+            url: "http://localhost:3000/categorias/listagem",
+            type: "GET",
+            dataType: "json",
+            success: function (res) {
+              $("#inputCategoria").html("<option selected>Categoria</option>")
+              $.each(res.resultado, function(key, value){
+                $("#inputCategoria").append(
+                  "<option value = " + value.IdCategoria + ">" + value.Categoria + "</option>"
+
+                );
+              });
+            },
+          });
+        }
+        function setCategoria(){
+          $.ajax({
+            success: function (res) {
+             let categoria = $("#IdCategoria").val();
+             $("#inputCategoria option").each(function(){
+              if ($(this).val() == categoria) {
+                  $("#inputCategoria option[value='" + categoria + "']").attr('selected', 'selected');
+              }
+             }
+             )
+            },
+          });
+        }
+
+
+        getCategoria();
+        setCategoria();
+      });
+
+      function altera(IdJogo){
+          $.ajax({
+            url: "/jogos/edit/" + IdJogo,
+            type: "PUT",
+            data:
+            "nome=" + $("#inputJogo").val() +
+            "&categoria=" + $("#inputCategoria").val() +
+            "&preço=" + $("#inputPreço").val() +
+            "&plataforma=" + $("#inputPlataforma").val(),
+            success: function (res) {
+             $(location).attr('href', '/jogos/listagem');
+            },
+          });
+        }
+
+
+      $(document).ready(function(){
+        function getPlataforma(){
+          $.ajax({
+            url: "http://localhost:3000/plataformas/listagem",
+            type: "GET",
+            dataType: "json",
+            success: function (res) {
+              $("#inputPlataforma").html("<option selected>Plataforma</option>")
+              $.each(res.resultado, function(key, value){
+                $("#inputPlataforma").append(
+                  "<option value = " + value.IdPlataforma + ">" + value.NoPlataforma + "</option>"
+
+                );
+              });
+            },
+          });
+        }
+        function setPlataforma(){
+          $.ajax({
+            success: function (res) {
+             let plataforma = $("#IdPlataforma").val();
+             $("#inputPlataforma option").each(function(){
+              if ($(this).val() == plataforma) {
+                  $("#inputPlataforma option[value='" + plataforma + "']").attr('selected', 'selected');
+              }
+             }
+             )
+            },
+          });
+        }
+        
+        getPlataforma();
+        setPlataforma();
+        });
+
+    
+  </script>
+
+    <style>
+      body{
+        background-color: #ccc;
+      }
+      .btn{
+        color: bisque;
+        background-color: black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <% if (resultado.IdJogo) {%>
+      <input type = "hidden" id="IdCategoria" name="IdCategoria" value= "<%= resultado.IdCategoria%>">
+      <input type = "hidden" id="IdPlataforma" name="IdPlataforma" value= "<%= resultado.IdPlataforma%>">
+      <h1>Alterar Jogos</h1>
+      <form method = "#" action = "/jogos/edit/<%= resultado.IdJogo%>" class=" g-3">
+      <%} else {%>
+        <h1>Cadastrar Jogos</h1>
+    <form method = "post" action = "/jogos/add" class="row g-3">
+      <%}%>
+      <div class="col-md-6">
+        <label for="inputJogo" class="form-label">Titulo</label>
+        <% if (resultado.IdJogo) {%>
+          <input type="text" class="form-control" id="inputJogo" placeholder="Nome" name="nome" value = "<%= resultado.NomeJogo%>">
+          <%} else {%>
+            <input type="text" class="form-control" id="inputJogo" placeholder="Nome" name="nome">
+        <%}%>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPreço" class="form-label">Preço</label>
+        <input type="text" class="form-control" id="inputPreço" name="preço">
+      </div>
+      <div>
+      <label for="inputCategoria" class="form-label"></label>
+      <select id="inputCategoria" class="form-select" name="categoria">
+        <option selected>Categoria...</option>
+        <option>...</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="inputPlataforma" class="form-label"></label>
+      <select id="inputPlataforma" class="form-select" name="plataforma">
+        <option selected>Plataforma...</option>
+        <option>...</option>
+      </select>
+    </div>
+
+    <div class="col-17">
+      <% if (resultado.IdJogo) {%>
+        <button type="button" onclick="altera(<%= resultado.IdJogo%>);" class="btn btn-primary">Salvar</button>
+        <%} else {%>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <%}%>
+  </div>
+</form>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

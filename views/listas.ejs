@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Listagem de Jogos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Listagem de Jogos</h1>
+    <p><% for (item of resultado) {%>
+          <%= item.IdJogo%> <%= item.NomeJogo%> <%= item.Preço%>
+      <%}%>
+    </p>
+  </body>
+</html>
