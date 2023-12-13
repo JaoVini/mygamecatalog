@@ -42,6 +42,43 @@ router.get('/listar', function(req, res,) {
 });
 
 
+router.get('/edit/:id', function(req, res) {
+  let id = req.params.id;
+
+  let cmd = 'SELECT IdCategoria, Categoria FROM categoria WHERE IdCategoria = ?; ';
+  db.query(cmd, [id], function(erro, listagem) {
+    if (erro) {
+      res.send(erro);
+    } else {
+      res.render('categorias-add', { resultado: listagem [0]});
+    }
+  });
+});
+
+router.put('/edit/:id', function(req, res) {
+  let categoria = req.body.plataforma;
+  
+  let cmd = 'UPDATE categoria SET Categoria = ? WHERE IdCategoria = ?;';
+  db.query(cmd, [categoria, id], function(erro, listagem) {
+    if (erro) {
+      res.send(erro);
+    }
+      res.redirect(303,'/categorias/listar');
+  });
+});
+
+
+router.delete('/delete/:id', function(req, res) {
+  let id = req.params.id;
+  let cmd = 'DELETE FROM Categoria WHERE IdCategoria = ?;';
+  db.query(cmd, [id], function(erro, listagem) {
+    if (erro) {
+      res.send(erro); 
+    } else {
+      res.redirect(303, '/categorias/listar');
+    }
+  });
+});
 
  module.exports = router
 
