@@ -19,13 +19,23 @@
   <script></script>
 </head>
 <body>
+
+  <% if (resultado.IdCategoria) {%>
+    <input type="hideen" id="IdCategoria" name="IdCategoria" value="<%= resultado.IdCategoria%>">
+    <h1>Alterar Categorias</h1>
+    <form method="#" action="/categorias/edit/<%= resultado.IdCategoria%>">
+    <%} else {%>
   <h2>Cadastrar Categoria</h2>
-  
   <div class="container">
     <form method="post" action="/categorias/add">
+      <%}%>
       <div class="mb-3">
         <label for="categoria" class="form-label">Nome da Categoria:</label>
-        <input type="text" class="form-control" id="categoria" name="categoria" required>
+        <% if (resultado.IdCategoria) {%>
+          <input type="text" class="form-control" id="categoria" name="categoria" value="<%= resultado.Categoria%>">
+        <%} else {%>
+          <input type="text" class="form-control" id="categoria" name="categoria" required>
+          <%}%>
       </div>
       <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
