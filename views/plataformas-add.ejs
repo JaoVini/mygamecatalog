@@ -17,12 +17,22 @@
   </style>
 </head>
 <body>
+  <% if (resultado.IdPlataforma) {%>
+    <input type="hideen" id="IdPlataforma" name="IdPlataforma" value="<%= resultado.IdPlataforma%>">
+  <h1>Alterar Plataformas</h1>
+  <form method="#" action="/plataformas/edit/<%= resultado.IdPlataforma%>">
+  <%} else {%>
   <h2>Cadastrar Plataforma</h2>
   <div class="container">
     <form method="POST" action="/plataformas/add">
+      <%}%>
       <div class="mb-3">
         <label for="plataforma" class="form-label">Nome da Plataforma:</label>
+        <% if (resultado.IdPlataforma) {%>
+          <input type="text" class="form-control" id="plataforma" name="plataforma" value="<%= resultado.NoPlataforma%>">
+          <%} else {%>
         <input type="text" class="form-control" id="plataforma" name="plataforma" required>
+        <%}%>
       </div>
       <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
