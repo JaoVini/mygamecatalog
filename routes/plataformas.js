@@ -46,6 +46,46 @@ router.get('/listar', function(req, res,) {
 });
 
 
+router.delete('/delete/:id', function(req, res) {
+  let id = req.params.id;
+  let cmd = 'DELETE FROM plataformas WHERE IdPlataforma = ?;';
+  db.query(cmd, [id], function(erro, listagem) {
+    if (erro) {
+      res.send(erro); 
+    } else {
+      res.redirect(303, '/plataformas/listar');
+    }
+  });
+});
+
+
+
+router.get('/edit/:id', function(req, res) {
+  let id = req.params.id;
+
+  let cmd = 'SELECT IdPlataforma, NoPlataforma FROM plataformas WHERE IdPlataforma = ?; ';
+  db.query(cmd, [id], function(erro, listagem) {
+    if (erro) {
+      res.send(erro);
+    } else {
+      res.render('plataformas-add', { resultado: listagem [0]});
+    }
+  });
+});
+
+router.put('/edit/:id', function(req, res) {
+  let plataforma = req.body.plataforma;
+  
+  let cmd = 'UPDATE plataformas SET NoPlataforma = ? WHERE IdPlataforma = ?;';
+  db.query(cmd, [plataforma, id], function(erro, listagem) {
+    if (erro) {
+      res.send(erro);
+    }
+      res.redirect(303,'/plataformas/listar');
+  });
+});
+
+
 
 
 module.exports = router;
