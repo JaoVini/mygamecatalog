@@ -4,11 +4,57 @@
     <title>Jogos</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+  <style>
+    body{
+      background-color: #ccc;
+    }
+    div{
+      display: flex;
+      justify-content: center;
+    }
+    a{
+      color: blue;
+      font-size: 25px;
+      text-decoration: none;
+    }
+    div{
+      padding: 50px;
+      background-color: #74747479;
+      border-radius: 80px;
+    }
+
+    h1{
+      display: flex;
+      justify-content: center;
+      font-family: monospace;
+      margin-top: 200px;
+      margin-left: 35px;
+      font-size: 50px;
+      line-height: 2;
+            color: blue;
+            animation: neon 1s ease-in-out infinite alternate;
+
+              text-shadow: 0 0 35px #aaaaaa,
+                           0 0 40px #6b6b6b,
+                           0 0 55px #141ae2;
+          }
+    }
+  </style>
   <body>
     <ul>
-       <li><a href="http://localhost:3000/jogos/listagem">Jogos!</a></li>
-       <li><a href="http://localhost:3000/categorias/listar">Categorias!</a></li>
-       <li><a href="http://localhost:3000/plataformas/listar">Plataformas!</a></li>
+      <div>
+       <a href="http://localhost:3000/jogos/listagem">Jogos!</a>
+      </div>
+      <br>
+      <div>
+       <a href="http://localhost:3000/categorias/listar">Categorias!</a>
+      </div>
+      <br>
+       <div>
+        <a href="http://localhost:3000/plataformas/listar">Plataformas!</a>
+       </div>
     </ul>
+
+    <h1>MAVICA +</h1>
   </body>
 </html>
