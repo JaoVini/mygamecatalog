@@ -16,7 +16,7 @@ router.get('/listagem', function(req, res) {
 
 
 router.get('/add', function(req, res,) {
-  res.render('plataformas-add', {resultado: {}})
+  res.render('plataformas-add', {resultado: {}});
 
  });
 
@@ -63,25 +63,26 @@ router.delete('/delete/:id', function(req, res) {
 router.get('/edit/:id', function(req, res) {
   let id = req.params.id;
 
-  let cmd = 'SELECT IdPlataforma, NoPlataforma FROM plataformas WHERE IdPlataforma = ?; ';
-  db.query(cmd, [id], function(erro, listagem) {
+  let cmd = 'SELECT IdPlataforma, NoPlataforma FROM plataformas WHERE IdPlataforma = ?;';
+ db.query(cmd, [id], function(erro, listagem) {
     if (erro) {
       res.send(erro);
     } else {
-      res.render('plataformas-add', { resultado: listagem [0]});
+      res.render('plataformas-add', {resultado: listagem[0]});
     }
   });
 });
 
 router.put('/edit/:id', function(req, res) {
+  let id = req.params.id;
   let plataforma = req.body.plataforma;
-  
+
   let cmd = 'UPDATE plataformas SET NoPlataforma = ? WHERE IdPlataforma = ?;';
   db.query(cmd, [plataforma, id], function(erro, listagem) {
     if (erro) {
       res.send(erro);
-    }
-      res.redirect(303,'/plataformas/listar');
+    } 
+      res.redirect(303, '/plataformas/listar');
   });
 });
 

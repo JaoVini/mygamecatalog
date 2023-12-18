@@ -56,7 +56,8 @@ router.get('/edit/:id', function(req, res) {
 });
 
 router.put('/edit/:id', function(req, res) {
-  let categoria = req.body.plataforma;
+  let id = req.params.id;
+  let categoria = req.body.categoria;
   
   let cmd = 'UPDATE categoria SET Categoria = ? WHERE IdCategoria = ?;';
   db.query(cmd, [categoria, id], function(erro, listagem) {
