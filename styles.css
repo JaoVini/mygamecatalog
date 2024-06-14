@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient( to bottom,#00205b, #ef6a01);  
+}
+
+h1,h2{color: #fff;}
+h3{color: #fff; font-weight: 550; margin-top: 20px;}
+p{color: #ef6a01;}
+hr{border: #ef6a01 1px solid; opacity: 0.4;}
+
+/* Navbar */
+.navbar-container{
+    width: 100%;
+    height: 80px;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+    border-bottom: 1px solid #ef6a01;
+    background-color: #00205b;}
+
+.nav{position: relative;}
+
+.logo{height: 50px; width: 180px; margin-top: 12px; margin-left: 6px;}
+
+.navbar-items{
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    display: inline-block;
+}
+.navbar-items li{
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 50px;
+}
+
+.navbar-items a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar-items a:hover{
+    color: #ef6a01;}
+
+.navbar-items .default-btn{
+    padding: 15px 20px;
+    background-color: #ef6a01;
+    border-radius: 5px;
+    margin-right: 50px;
+    color: white;
+}
+
+.navbar-items .default-btn:hover{
+    background-color: #fff;
+    color: #ef6a01;
+}
+
+/* Main Banner */
+.main-banner{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  
+    padding: 14rem 0;
+}
+.main-banner h1, .main-banner p{
+    width: 70%;
+    color: white;
+    margin-left: 50px;
+    font-weight: bold;
+    text-shadow: black 2px 2px 3px;
+}
+.main-banner h1{font-size: 45px; margin-top: -120px;}
+.main-banner p{font-size: 25px;}
+.main-banner a{margin-top: 20px; transition: 0.9s; width: 250px; margin-left: 50px; text-decoration: none; color: #fff; padding: 20px; background-color: #ef6a01; text-align: center; border: 2px solid white; text-transform: uppercase; font-weight: 550;}
+.main-banner a:hover{background-color: #fff; color: #ef6a01; border: 2px solid #ef6a01;}
+mark{background-color: transparent; color: #ffa500;}
+
+/* sobre */
+.sobre{
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+}
+
+.sobre img{ margin-top: 50px; width: 28%; height: 28%;}
+
+.sobre > p{
+    color: #dfdfdf;
+    margin: 50px 100px 100px 100px;
+    font-family: "Castoro Titling", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 25px;
+    width: auto;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+/* Serviços */
+.services-container{padding: 3px 0;  border-top: 1px solid #ef6a01; border-bottom: 1px solid #ef6a01;}
+.services-container p{color: #fff;}
+.services-container h3{color: #fff;}
+
+.services-container ul{display: flex; width: 90%; margin: 0 auto;}
+.services-container li{flex: 1 1 200px; list-style:none; text-align: center; padding: 20px;}
+
+.fas{font-size: 60px; margin-bottom: 15px;}
+.fa-shield-alt{color: wheat;}
+.fa-rocket{color: #ef6a01;}
+.fa-comments{color: #ffa500;}
+
+.services-container h3{margin-bottom: 30px;}
+.services-container p{line-height: 24px;}
+
+/* prices and plans */
+.pricing-container{
+    margin-top: 100px;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+.pricing-container h2{
+    font-size: 36px;
+}
+.pricing-container p{
+    margin-top: 30px;
+    font-size: 25px;
+}
+.plans-container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 50px auto 0;
+}
+.plan{
+    flex: 1;
+    max-width: 275px;
+    margin: 0px 20;
+}
+.plan ul{padding: 0;}
+.plan li{
+    list-style: none;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #ef6a01;
+    background-color: #fff;
+    color: #333;
+
+}
+
+.plan .price{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    background-color: #222;
+    border: 2px solid #ef6a01;
+    text-align: center;
+    line-height: 120px;
+    margin: 0 auto -35px;
+    position: relative;
+    cursor: pointer;
+}
+.plan .price:hover{
+    background-color: #fff;
+}
+
+.plan .price img{width: 50px; height: 50px; margin-top: 30px;}
+
+.plan .plan-name{
+    border: 1px solid white;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    padding: 50px 0;
+    border-radius: 0px;
+    margin-bottom: 1px;
+}
+
+.plan .plan-btn{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 24px;
+    height: 75px;
+    line-height: 75px;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+
+.plan .recommended{color: white; border: 1px solid #ffa500;}
+#plan-btn-recommended{border: 1px solid white;}
+
+
+.plan .li-recommended{
+    border: 1px solid #ffa500;
+
+}
+/* search domain */
+.searchdomain-container{
+    border-top: #ef6a01 1px solid;
+    border-bottom: #ef6a01 1px solid;
+    text-align: center;
+    padding: 5rem 0;
+}
+.searchdomain-container h2{
+    color: white;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+.searchdomain-container p{
+    color: #D5D5D5;
+    font: 24PX;
+    margin-bottom: 25px;
+}
+.searchdomain-container input{
+    display: block;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.searchdomain-container input[type="text"]{
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.searchdomain-container input[type="submit"]{
+    background-color: #ef6a01;
+    padding: 15px 30px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: .9;
+}
+
+
+.searchdomain-container input[type="submit"]:hover{opacity: 1;}
+
+/* contact form */
+.contact-container{
+    text-align: center;
+    padding: 5rem 0 2rem 0;}
+
+.contact-container h2{font-size: 35px; margin-bottom: 15px;}
+.contact-container p{font-size: 20px; margin-bottom: 40px;}
+
+.contact-container input,
+.contact-container textarea{
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 0 10px 20px;
+}
+
+.contact-container textarea{
+    display: block;
+    margin: 0 auto 20px;
+    width: 470px;
+    height: 150px;
+}
+
+.contact-container input[type="submit"]{
+    display: block;
+    margin: 0 auto;
+    background-color: #ef6a01;
+    color: white;
+    cursor: pointer;
+    opacity: .9;
+}
+.contact-container input[type="submit"]:hover{
+    opacity: 10;
+}
+
+
+
+.main-container{
+display: flex; flex-direction: row; height: 600px;}
+.container-one{height: auto;  width: 60%; }
+.container-two{height: 500px; margin-top: 100px;  width: 40%; border: #fff 2px solid; border-radius: 200%; background-color: #ef6a01; margin-right: 50px;}
+.container-two img{width: 100%; height: 100%;}
+
+/* footer */
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0 100px;
+}
+
+/* responsividade */
+
+/* small lapptops a partir de 11400px */
+
+@media (max-width: 1100px){
+    .plans-container{width: 95%;}
+
+    .plan{margin: 0 5px;}
+}
+
+/* tablet 900px */
+@media (max-width: 900px){
+    .main-banner p{padding: 0 6rem;}
+
+    .navbar-items li{margin-left: 30px;}
+    .default-btn{margin-right: 30px;}
+
+    .searchdomain-container{padding: 2rem 4rem;}
+}
+
+@media (max-width: 666px){
+    .navbar-items li{margin-left: 10px; font-size: 14px;}
+    .default-btn{margin-right: 10px; padding: 10px 2px;}
+}
+
+/* celular 576px */
+@media (max-width: 576px){
+    html, body{overflow-x: hidden;}
+    .navbar-items{display: none;}
+
+    .main-banner p{padding: 0 2rem;}
+
+    .services-container ul{flex-direction: column;}
+
+    .plans-container{
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .plan{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    
+    .contact-container{padding: 3rem 2rem;}
+    
+    .contact-container input,
+    .contact-container textarea{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .searchdomain-container h2{font-size: 28px;}
+    .searchdomain-container input[type="text"]{width: 100%;}
+
+    .sobre img{ margin-top: 50px; width: 58%; height: 58%;}
+
+    .main-container{display: flex; flex-direction: column; height: auto;}
+    .container-one{width: auto; justify-content: center;}
+    .container-one h1, p{text-align: center;}
+    .container-one a{margin: auto;}
+    .container-two{width: 350px; height: 350px;  margin: auto; margin-top: -150px;}
+}
