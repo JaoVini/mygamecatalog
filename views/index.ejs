@@ -5,56 +5,145 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalnia+Glaze:wght@100..700&family=Rubik+Scribble&display=swap');
+
+    :root{
+      --background-color: #DED6D6;
+      --botao-background: 
+    }
+
     body{
-      background-color: #ccc;
-    }
-    div{
-      display: flex;
-      justify-content: center;
-    }
-    a{
-      color: blue;
-      font-size: 25px;
-      text-decoration: none;
-    }
-    div{
-      padding: 50px;
-      background-color: #74747479;
-      border-radius: 80px;
+    background: linear-gradient(to left, #00072D, #001C55, #0A2472, #0E6BA8);
+      
     }
 
-    h1{
-      display: flex;
-      justify-content: center;
-      font-family: monospace;
-      margin-top: 200px;
-      margin-left: 35px;
-      font-size: 50px;
-      line-height: 2;
-            color: blue;
-            animation: neon 1s ease-in-out infinite alternate;
+      .secoes{
+        margin: 0vw auto;
+      }
 
-              text-shadow: 0 0 35px #aaaaaa,
-                           0 0 40px #6b6b6b,
-                           0 0 55px #141ae2;
-          }
-    }
-  </style>
-  <body>
+      .coluna{
+        height: 30px;
+        width: 30%;
+        margin: 0px auto;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background-color: transparent;
+        border: 2px solid #0E6BA8;
+        border-radius: 20px;
+        transition: 0.6s;
+        cursor: pointer;}
+
+      .coluna:hover{
+        height: 120px;
+        padding: 23px;
+        }
+
+      .novas-colunas{
+        margin: 10px;
+        transition: 0.9s;}
+      
+      .coluna:hover .novas-colunas{
+        display: block;
+      }
+
+      
+      .bi-database-check{
+        opacity: 0.7;
+        cursor: pointer;
+        color: #0E6BA8;
+      }
+
+      .bi-database-check:hover{
+        opacity: 1;}
+
+        .bi-database-check:hover > p{
+          opacity: 1;}
+
+      .descricao{
+        display: flex;
+        justify-content: center;
+        margin: 0px auto 50px auto;}
+        
+        p{
+        cursor: pointer;
+        font-weight: 700;
+        color: #2e86c1;
+        margin-left: 10px;
+        font-size: 18px;
+        opacity: 0.8;
+        transition: 0.9s;
+      }
+
+      .novas-colunas{
+        width: 150px;
+        margin: 10px auto;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        opacity: 0.5;
+        display: none;}
+        
+        .novas-colunas:hover{
+        background-color: #0E6BA8;
+        opacity: 1;}
+        
+        a{
+          font-family: "Amatic SC";
+          font-weight: 900;
+          text-transform: uppercase;
+          color: #fff;
+          font-size: 30px;
+          text-decoration: none;}
+      </style>
+      <body>
+        <header>
+          
+        </header>
+    <div class="secoes">
+      <div class="descricao">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-database-check" viewBox="0 0 16 16">
+        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514"/>
+        <path d="M12.096 6.223A5 5 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.5 4.5 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.5 4.5 0 0 1-.813-.927Q8.378 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.6 4.6 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10q.393 0 .774-.024a4.5 4.5 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777M3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4"/>
+      </svg>
+      <p>@joavincus</p>
+    </div>
     <ul>
-      <div>
-       <a href="http://localhost:3000/jogos/listagem">Jogos!</a>
-      </div>
-      <br>
-      <div>
-       <a href="http://localhost:3000/categorias/listar">Categorias!</a>
-      </div>
-      <br>
-       <div>
-        <a href="http://localhost:3000/plataformas/listar">Plataformas!</a>
+      <div class="coluna">
+       <a href="#">Tabela de Jogos</a>
+       <div class="novas-colunas">
+        <a href="http://localhost:3000/jogos/listagem">Visualizar</a>
        </div>
-    </ul>
+       
+       <div class="novas-colunas">
+        <a href="http://localhost:3000/jogos/add">Adicionar</a>
+       </div>
+      </div>
 
-    <h1>MAVICA +</h1>
-  </body>
+      <br>
+      <div class="coluna">
+       <a href="#">Tabela de Categorias</a>
+       <div class="novas-colunas">
+        <a href="http://localhost:3000/categorias/listar">Visualizar</a>
+       </div>
+       <div class="novas-colunas">
+        <a href="http://localhost:3000/categorias/add">Adicionar</a>
+       </div>
+      </div>
+      <br>
+       <div class="coluna">
+        <a href="#">Tabela de Plataformas</a>
+        
+        <div class="novas-colunas">
+          <a href="http://localhost:3000/plataformas/listar">Visualizar</a>
+         </div>
+         <div class="novas-colunas">
+          <a href="http://localhost:3000/plataformas/add">Adicionar</a>
+         </div>
+       </div>
+    </div>
+    </ul>
+  
+  </body> 
 </html>
