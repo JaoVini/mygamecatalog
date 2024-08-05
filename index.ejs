@@ -8,7 +8,7 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalnia+Glaze:wght@100..700&family=Rubik+Scribble&display=swap');
 
-      :root{
+    :root{
       --background-color: #DED6D6;
       --botao-background: 
     }
@@ -50,20 +50,29 @@
 
       
       .bi-database-check{
+        opacity: 0.7;
         cursor: pointer;
         color: #0E6BA8;
       }
+
+      .bi-database-check:hover{
+        opacity: 1;}
+
+        .bi-database-check:hover > p{
+          opacity: 1;}
+
       .descricao{
         display: flex;
         justify-content: center;
         margin: 0px auto 50px auto;}
         
         p{
-          cursor: pointer;
+        cursor: pointer;
         font-weight: 700;
         color: #2e86c1;
         margin-left: 10px;
         font-size: 18px;
+        opacity: 0.8;
         transition: 0.9s;
       }
 
@@ -87,12 +96,11 @@
           color: #fff;
           font-size: 30px;
           text-decoration: none;}
-  
-  </style>
-  <body>
-    <header>
-
-    </header>
+      </style>
+      <body>
+        <header>
+          
+        </header>
     <div class="secoes">
       <div class="descricao">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-database-check" viewBox="0 0 16 16">
@@ -124,6 +132,7 @@
       <br>
        <div class="coluna">
         <a href="#">Tabela de Plataformas</a>
+        
         <div class="novas-colunas">
           <a href="http://localhost:3000/plataformas/listar">Visualizar</a>
          </div>
