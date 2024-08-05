@@ -16,8 +16,43 @@
       
       }
       body{
-        background-color: #ccc;
+        background-color: #0E6BA8;
       }
+
+      .table{background-color: transparent;}
+
+
+      th, tr,td{
+        background-color: transparent;
+        text-align: center;
+        border: 1px solid #0A2472;  
+      }
+      
+      th{
+        font-family: sans-serif;
+        text-transform: uppercase;
+      }
+
+      .table{
+        margin: 5vw auto;
+      }
+
+      .voltar{
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 10px;
+        width: 80px; 
+        background-color: black;
+        border: 1px solid green;}
+
+        .voltar:hover{
+          background-color: darkcyan;
+        }
+
+        a{
+          color: #fff;
+          text-decoration: none;
+        }
 
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -47,6 +82,7 @@
     </script>
   </head>
   <body>
+    <a href="http://localhost:3000/" class="voltar">Voltar</a>
 
     <table class="table">
       <thead class="table-light">
